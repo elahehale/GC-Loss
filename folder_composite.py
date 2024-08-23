@@ -124,7 +124,7 @@ class DatasetFolder(VisionDataset):
         self.class_to_idx = class_to_idx
         self.samples = samples
         self.targets = [s[1] for s in samples]
-        self.category_indices = np.arange(1000)     # hard-coded for imagenet num classes
+        self.category_indices = np.arange(200)     # hard-coded for imagenet num classes
         self.target_idx_to_im_path_dict = target_idx_to_im_path_dict    # mapping from target idx to im paths
 
         # we use x_start, x_end, y_start, y_end
@@ -134,7 +134,7 @@ class DatasetFolder(VisionDataset):
             2: (224, 448, 0, 224),
             3: (224, 448, 224, 448)
         }
-        self.neg_category_indices = list(range(1000))
+        self.neg_category_indices = list(range(200))
 
     def _find_classes(self, dir):
         """
